@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Application</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;1,500&display=swap"
+    rel="stylesheet">
+</head>
+<style>
+  body {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+  }
+</style>
+
+<body>
+  <h1>Application Form</h1>
+
+  <body>
+
+    <script>
+      function confirmSubmit() {
+        if (window.confirm("Are you sure you want to submit your application?\nYou will not be able to change your information once submitted.")) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+    <form action="/processApplication" method="POST" onsubmit="return confirmSubmit()">
+      <fieldset>
+        <label><strong>Name: </strong></label>
+        <input type="text" name="username" id="username" required>
+
+        <label><strong>Email Address: </strong></label>
+        <input type="text" name="email" id="email" required>
+        <br>
+        <br>
+        <label><strong>Phone Number: </strong></label>
+        <input type="text" name="phoneNumber" id="phone" required>
+        <br><br>
+        <label><strong>Squat One Rep Max: </strong></label>
+        <input type="text" name="squatMax" id="squat">
+        <br><br>
+        <label><strong>Bench One Rep Max: </strong></label>
+        <input type="text" name="benchMax" id="bench">
+        <br><br>
+        <label><strong>Deadlift One Rep Max: </strong></label>
+        <input type="text" name="deadliftMax" id="deadlift">
+        <br><br>
+        <label><strong>Background Information:</strong></label><br>
+        <textarea name="info" rows="6" cols="100"></textarea>
+        <br><br>
+
+        <fieldset>
+          <label><strong>Preferred Vertical Pull Movement:</strong></label>
+          <input type="radio" name="vertical" value="Lat Pulldowns" required>Lat Pulldowns
+          <input type="radio" name="vertical" value="Pull Ups" required>Pull ups
+          <input type="radio" name="vertical" value="Chin Ups" required>Chin ups
+          <br>
+          <label><strong>Preferred Horizontal Pull Movement:</strong></label>
+          <input type="radio" name="horizontal" value="Cable Rows" required>Cable Rows
+          <input type="radio" name="horizontal" value="Machine Rows" required>Machine Rows
+          <input type="radio" name="horizontal" value="T-Bar Rows" required>T-Bar Rows
+          <br>
+          <label><strong>Preferred Shoulder Press Movement:</strong></label>
+          <input type="radio" name="shoulder" value="Seated DB Overhead Press" required>Seated DB Overhead Press
+          <input type="radio" name="shoulder" value="Machine Shoulder Press" required>Machine Shoulder Press
+          <input type="radio" name="shoulder" value="Military Press" required>Military Press
+        </fieldset>
+      </fieldset>
+
+      <br>
+      <input type="reset" value="Reset">
+      <input type="submit" value="Submit Application">
+
+    </form>
+
+    <hr>
+    <a href="/">HOME</a>
+    <footer>
+      <style>
+        body {
+          min-height: 100vh;
+          position: relative;
+        }
+
+        main {
+          /* Set the height of the main content */
+          height: calc(100vh - 100px);
+          /* Change 100px to the height of your header */
+        }
+
+        footer {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+        }
+
+        #footerlink {
+          text-align: center;
+          background-color: rgb(92, 91, 91);
+          color: white;
+          padding: 10px;
+        }
+      </style>
+      <div id="footerlink">
+        <a href="/">&copy; 2023, FitdissBolin</a>
+      </div>
+    </footer>
+  </body>
+
+</html>
