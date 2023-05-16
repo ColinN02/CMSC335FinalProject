@@ -9,7 +9,8 @@ API Link:
     "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;1,500&display=swap"
 
 Youtube Demo Video:
-
+    https://youtu.be/q6F7lZZ7m0Y
 
 Online Website Link:
 
+    https://cmsc335-final-project-workout-program-ur77.onrender.com/
