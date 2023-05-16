@@ -24,18 +24,34 @@ const databaseAndCollection = {
 	db: dbName,
 	collection: collectionName,
 }
-let dataInput = ''
+let data = '';
+
 process.stdin.on('readable', () => {
-	data = process.stdin.read()
-	if (dataInput !== null) {
-		let command = data.toString().trim()
-		if (command === 'stop') {
-			console.log('Shutting down server')
-			process.exit(0)
-		}
-	}
-	process.stdout.resume()
-})
+  let chunk;
+  while ((chunk = process.stdin.read()) !== null) {
+    data += chunk;
+  }
+
+  let command = data.trim();
+  if (command === 'stop') {
+    console.log('Shutting down server');
+    process.exit(0);
+  } else {
+    console.log('Invalid command. Please enter "stop" to shutdown the server.');
+  }
+
+  data = ''; // Reset the data variable after processing each command
+});
+
+process.stdin.on('end', () => {
+  process.stdout.resume();
+});
+
+process.stdin.on('error', (err) => {
+  console.error('Error reading input:', err);
+  process.exit(1);
+});
+
 
 const uri = `mongodb+srv://${username}:${password}@cluster0.3t8byfo.mongodb.net/?retryWrites=true&w=majority`
 const client = new MongoClient(uri, {
